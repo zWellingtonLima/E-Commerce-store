@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { FC } from "react";
 import { ShoppingCart } from "lucide-react";
@@ -21,7 +21,7 @@ const Info: FC<InfoProps> = ({ data }) => {
         </p>
       </div>
       <hr className="my-4" />
-      <div className='flex flex-col gap-y-6'>
+      <div className="flex flex-col gap-y-6">
         <div className="flex items-center gap-x-4">
           <h3 className="font-semibold text-black">Size:</h3>
           <div>{data?.size?.name}</div>
@@ -34,8 +34,8 @@ const Info: FC<InfoProps> = ({ data }) => {
           />
         </div>
       </div>
-      <div className='mt-10 flex items-center gap-x-3'>
-        <Button className='flex items-center gap-x-2'>
+      <div className="mt-10 flex items-center gap-x-3">
+        <Button className="flex items-center gap-x-2">
           Add To Cart
           <ShoppingCart />
         </Button>
