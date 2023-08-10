@@ -6,6 +6,7 @@ import getProducts from "@/actions/get-products";
 import getSizes from "@/actions/get-sizes";
 import Container from "@/components/ui/container";
 import Billboard from "@/components/billboard";
+import Filter from "./components/filter";
 
 export const revalidate = 0;
 
@@ -33,11 +34,22 @@ const CategoryPage: FC<CategoryPageProps> = async ({
   const colors = await getColors();
   const category = await getCategory(params.categoryId);
 
-  return <div className='bg-white'>
-    <Container>
-      <Billboard data={category.billboard}/>
-    </Container>
-  </div>;
+  return (
+    <div className="bg-white">
+      <Container>
+        <Billboard data={category.billboard} />
+        <div className="px-4 sm:px-6 lg:px-8 pb-24">
+          <div className="lg:grid lg:grid-cols-5 lg:gap-x-8">
+            {/* Add mobile Filters */}
+            <div className="hidden lg:block">
+              <Filter valueKey="sizeId" name="Sizes" data={sizes} />
+              <Filter valueKey="colorId" name="Colors" data={colors} />
+            </div>
+          </div>
+        </div>
+      </Container>
+    </div>
+  );
 };
 
 export default CategoryPage;
