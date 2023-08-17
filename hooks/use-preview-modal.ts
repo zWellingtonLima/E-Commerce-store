@@ -1,6 +1,5 @@
 import { create } from "zustand";
 import { Product } from "@/types";
-import { FC } from "react";
 
 interface PreviewModalStore {
   isOpen: boolean;
